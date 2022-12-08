@@ -16,10 +16,10 @@
     Original script from Ondrej Sebela (tw:@AndrewZtrhgf), described in the following blog:
     https://doitpsway.com/fixing-hybrid-azure-ad-join-on-a-device-using-powershell
 
-    Modified to wait up to 30 minutos for device connection to be confirmed.
+    Modified to wait up to 30 minutes for device connection to be confirmed.
     Original script at: https://github.com/ztrhgf/useful_powershell_functions/blob/master/INTUNE/Reset-HybridADJoin.ps1
 
-    
+
 .NOTES
 
 #>
