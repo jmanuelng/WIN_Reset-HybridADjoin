@@ -1,3 +1,28 @@
+<#
+
+.SYNOPSIS
+    Resets Hybrid AzureAD join connection.
+
+.DESCRIPTION
+    
+    Script will:
+     - un-join computer from AzureAD (using dsregcmd.exe)
+     - remove leftover certificates
+     - invoke rejoin (using sched. task 'Automatic-Device-Join')
+     - Loop and wait up to 30 minutes to confirm AzureAD connection.
+     - inform user about the result
+
+
+    Original script from Ondrej Sebela (tw:@AndrewZtrhgf), described in the following blog:
+    https://doitpsway.com/fixing-hybrid-azure-ad-join-on-a-device-using-powershell
+
+    Modified to wait up to 30 minutos for device connection to be confirmed.
+    Original script at: https://github.com/ztrhgf/useful_powershell_functions/blob/master/INTUNE/Reset-HybridADJoin.ps1
+
+    
+.NOTES
+
+#>
 function Reset-HybridADJoin {
     <#
     .SYNOPSIS
@@ -20,7 +45,7 @@ function Reset-HybridADJoin {
     Un-join and re-join this computer to AzureAD
 
     .NOTES
-    https://www.maximerastello.com/manually-re-register-a-windows-10-or-windows-server-machine-in-hybrid-azure-ad-join/
+    Source: https://www.maximerastello.com/manually-re-register-a-windows-10-or-windows-server-machine-in-hybrid-azure-ad-join/
     #>
 
     [CmdletBinding()]
